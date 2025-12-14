@@ -1,0 +1,20 @@
+<table class="table table">
+    <thead>
+        <th>ID</th>
+        <th>AccountHolderName</th>
+        <th>PhoneNumber</th>
+        <th>DebtDate</th>
+        <th>DueDate</th>
+        <th>Debt</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let account of accounts">
+            <td>{{account.id}}</td>
+            <td>{{account.accountHolderName}}</td>
+            <td>{{account.phoneNumber}}</td>
+            <td>{{account.debtDate}}</td>
+            <td>{{account.dueDate}}</td>
+            <td>{{account.debt}}</td>
+        </tr>
+    </tbody>
+</table>
