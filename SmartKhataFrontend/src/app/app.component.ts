@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { AccountListComponent } from './account-list/account-list.component';
 import { RouterOutlet, RouterLinkWithHref, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, AccountListComponent, RouterOutlet, RouterLinkWithHref, RouterLinkActive],
+  imports: [CommonModule, RouterOutlet, RouterLinkWithHref, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

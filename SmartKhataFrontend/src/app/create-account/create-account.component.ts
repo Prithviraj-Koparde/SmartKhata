@@ -2,26 +2,26 @@ import { Component } from '@angular/core';
 import { AccountService } from '../account.service';
 import { Account } from '../account';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-create-account',
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './create-account.component.html',
   styleUrl: './create-account.component.css'
 })
 export class CreateAccountComponent {
 
 
-  onSubmit(){
-    console.log('Payload sent to backend:', this.account); //////////////////// changes cna be undone
+  onSubmit() {
     this.saveAccount();
   }
-  account:Account = new Account();
-  constructor(private accountService:AccountService){}
+  account: Account = new Account();
+  constructor(private accountService: AccountService) { }
 
-  saveAccount(){
+  saveAccount() {
 
-    this.accountService.createAccount(this.account).subscribe(data =>{
+    this.accountService.createAccount(this.account).subscribe(data => {
       console.log(data);
     })
   }
