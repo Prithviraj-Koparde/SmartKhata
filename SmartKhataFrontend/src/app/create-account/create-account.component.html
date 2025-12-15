@@ -1,32 +1,56 @@
-<h1 class="text-center pb-3">Create Account</h1>
+<div class="container mt-4">
 
+    <div class="row justify-content-center">
+        <div class="col-md-5">
 
-<div class="col-md-4 offset-md-4">
-    <form (ngSubmit)="onSubmit()">
+            <div class="card shadow-sm">
+                <div class="card-body">
 
-        <div class="form-group">
-            <label>Account Holder Name</label>
-            <input class="form-control" type="text" id="accountHolderName" name="accountHolderName"
-                placeholder="Enter Account Holder Name" [(ngModel)]="account.accountHolderName">
+                    <h4 class="text-center mb-4">Create Account</h4>
 
-            <label>Contact Number</label>
-            <input class="form-control" type="text" id="phoneNumber" name="phoneNumber"
-                placeholder="Enter Contact Number" [(ngModel)]="account.phoneNumber">
+                    <form (ngSubmit)="onSubmit()">
 
-                        <label>Debt Date</label>
-            <input class="form-control" type="date" id="debtDate" name="debtDate" placeholder="Enter Debt Issue Date"
-                [(ngModel)]="account.debtDate">
+                        <div class="mb-3">
+                            <label class="form-label">Account Holder Name</label>
+                            <input type="text" class="form-control" name="accountHolderName"
+                                placeholder="Enter Account Holder Name" [(ngModel)]="account.accountHolderName"
+                                required>
+                        </div>
 
-                            <label>Due Date</label>
-            <input class="form-control" type="date" id="dueDate" name="dueDate" placeholder="Enter Due Date"
-                [(ngModel)]="account.dueDate">
+                        <div class="mb-3">
+                            <label class="form-label">Contact Number</label>
+                            <input type="text" class="form-control" name="phoneNumber"
+                                placeholder="Enter Contact Number" [(ngModel)]="account.phoneNumber" required>
+                        </div>
 
-                            <label>Debt Amount</label>
-            <input class="form-control" type="number" id="debt" name="debt" placeholder="Enter Debt Amount"
-                [(ngModel)]="account.debt">
+                        <div class="mb-3">
+                            <label class="form-label">Debt Date</label>
+                            <input type="date" class="form-control" name="debtDate" [(ngModel)]="account.debtDate"
+                                required>
+                        </div>
 
-            <button type="submit" class="btn btn-success mt-3 w-100">Add To Khata</button>
+                        <div class="mb-3">
+                            <label class="form-label">Due Date</label>
+                            <input type="date" class="form-control" name="dueDate" [(ngModel)]="account.dueDate"
+                                required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">Debt Amount (₹)</label>
+                            <input type="number" class="form-control" name="debt" placeholder="Enter Debt Amount"
+                                [(ngModel)]="account.debt" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">
+                            Add to Khata
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+
         </div>
+    </div>
 
-    </form>
 </div>

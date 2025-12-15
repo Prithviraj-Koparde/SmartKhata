@@ -1,20 +1,37 @@
-<table class="table table">
-    <thead>
-        <th>ID</th>
-        <th>AccountHolderName</th>
-        <th>PhoneNumber</th>
-        <th>DebtDate</th>
-        <th>DueDate</th>
-        <th>Debt</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let account of accounts">
-            <td>{{account.id}}</td>
-            <td>{{account.accountHolderName}}</td>
-            <td>{{account.phoneNumber}}</td>
-            <td>{{account.debtDate}}</td>
-            <td>{{account.dueDate}}</td>
-            <td>{{account.debt}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-body">
+
+            <h5 class="card-title mb-3">Account List</h5>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered align-middle text-center">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Account Holder Name</th>
+                            <th>Phone Number</th>
+                            <th>Debt Date</th>
+                            <th>Due Date</th>
+                            <th>Debt (₹)</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let account of accounts">
+                            <td>{{ account.id }}</td>
+                            <td>{{ account.accountHolderName }}</td>
+                            <td>{{ account.phoneNumber }}</td>
+                            <td>{{ account.debtDate }}</td>
+                            <td>{{ account.dueDate }}</td>
+                            <td class="fw-bold text-danger">
+                                {{ account.debt | number:'1.2-2' }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
