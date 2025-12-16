@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class CreateAccountComponent {
 
+  createSuccess = false;
 
   onSubmit() {
     this.saveAccount();
@@ -24,7 +25,11 @@ export class CreateAccountComponent {
 
     this.accountService.createAccount(this.account).subscribe(data => {
       console.log(data);
-      this.goToAccountList();
+      this.createSuccess = true;
+
+      setTimeout(() => {
+        this.goToAccountList();
+      }, 2000);
     })
   }
 
