@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AccountService } from '../account.service';
 import { Account } from '../account';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account-list',
@@ -12,7 +13,7 @@ import { CommonModule } from '@angular/common';
 export class AccountListComponent {
 
   accounts: Account[] = [];
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService, private router: Router) { }
 
   ngOnInit() {
     this.getAccounts();
@@ -23,5 +24,9 @@ export class AccountListComponent {
 
       this.accounts = data;
     })
+  }
+
+  updateAmount(id: number) {
+    this.router.navigate(['/updateAmount', id]);
   }
 }

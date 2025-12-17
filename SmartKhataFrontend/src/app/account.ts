@@ -1,6 +1,6 @@
 export class Account {
 
-    id?:number;
+    id: number = 0;
     accountHolderName: string = "";
     phoneNumber: string = "";
     debtDate: string = "";

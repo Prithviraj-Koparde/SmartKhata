@@ -1,0 +1,35 @@
+<div class="container mt-4">
+
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+
+                    <h4 class="text-center mb-4">Update Amount</h4>
+
+                    <!-- <div *ngIf="createSuccess" class="alert alert-success p-2">
+                        Customer account created successfully.
+                    </div> -->
+
+                    <form (ngSubmit)="onSubmit()">
+
+                        <div class="mb-4">
+                            <label class="form-label">Update Debt Amount (₹)</label>
+                            <input type="number" class="form-control" name="debt" placeholder="Enter Debt Amount"
+                                [(ngModel)]="account.debt" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">
+                            Add to Khata
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
