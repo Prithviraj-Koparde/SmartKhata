@@ -34,6 +34,9 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public AccountDTO updateAmount(Long id, BigDecimal debt) {
+        if (debt == null) {
+            throw new IllegalArgumentException("Debt value cannot be null");
+        }
         Account account = accountRepo.findById(id).orElseThrow(() -> new RuntimeException("Account doesnot exist!"));
         BigDecimal totalAmount = debt;
         account.setDebt(totalAmount);
