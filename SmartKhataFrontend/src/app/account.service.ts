@@ -16,7 +16,18 @@ export class AccountService {
     return this.httpClient.get<Account[]>(`${this.baseUrl}/allAccounts`);
   }
 
-  createAccount(account:Account): Observable<Account>{
-    return this.httpClient.post<Account>(`${this.baseUrl}`,account)
+  createAccount(account: Account): Observable<Account> {
+    return this.httpClient.post<Account>(`${this.baseUrl}`, account)
+  }
+
+  getAccountById(id: number): Observable<Account> {
+    return this.httpClient.get<Account>(`${this.baseUrl}/${id}`)
+  }
+
+  updateCustomerAmount(id: number, debt: number): Observable<Account> {
+
+    const request = { debt }
+    return this.httpClient.put<Account>(`${this.baseUrl}/${id}/updateDebt`, request)
+
   }
 }
