@@ -8,9 +8,13 @@
 
                     <h4 class="text-center mb-4">Update Amount</h4>
 
-                    <!-- <div *ngIf="createSuccess" class="alert alert-success p-2">
-                        Customer account created successfully.
-                    </div> -->
+                    <div *ngIf="accountUpdateSuccess" class="alert alert-success p-2">
+                        {{accountUpdateSuccess}}
+                    </div>
+
+                    <div *ngIf="accountUpdateFail" class="alert alert-danger p-2">
+                        {{accountUpdateFail}}
+                    </div>
 
                     <form (ngSubmit)="onSubmit()">
 

@@ -26,10 +26,32 @@ export class UpdateAmountComponent {
     })
   }
 
+  accountUpdateSuccess = "";
+  accountUpdateFail = "";
   onSubmit() {
-    this.accountService.updateCustomerAmount(this.id, this.account.debt).subscribe(data => {
-      this.account = data;
-      this.router.navigate(['/accounts'])
-    })
+    if (this.isValidAmount(this.account.debt)) {
+
+      this.accountService.updateCustomerAmount(this.id, this.account.debt).subscribe(data => {
+        this.account = data;
+        this.accountUpdateSuccess = "Amount updated successfully!";
+
+        setTimeout(() => {
+          this.router.navigate(['/accounts'])
+        }, 1500)
+      })
+    } else {
+
+      this.accountUpdateFail = "Please enter valid amount!";
+      setTimeout(() => {
+        this.accountUpdateFail = "";
+      }, 1500);
+    }
+
+  }
+
+  isValidAmount(debt: number): boolean {
+
+    return debt > -1 && debt < 10000000;
+
   }
 }
