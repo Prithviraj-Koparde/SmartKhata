@@ -29,4 +29,11 @@ export class AccountListComponent {
   updateAmount(id: number) {
     this.router.navigate(['/updateAmount', id]);
   }
+
+  deleteAccount(id: number) {
+    this.accountService.deleteAccount(id).subscribe(data => {
+      console.log(data);
+      this.getAccounts();
+    })
+  }
 }

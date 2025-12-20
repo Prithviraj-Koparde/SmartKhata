@@ -30,4 +30,10 @@ export class AccountService {
     return this.httpClient.put<Account>(`${this.baseUrl}/${id}/updateDebt`, request)
 
   }
+
+  deleteAccount(id: number): Observable<Account> {
+
+    return this.httpClient.delete<Account>(`${this.baseUrl}/${id}`)
+
+  }
 }
