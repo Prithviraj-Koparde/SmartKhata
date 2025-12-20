@@ -6,7 +6,9 @@ import com.KhataApplication.Mapper.AccountMapper;
 import com.KhataApplication.Repository.AccountRepo;
 import com.KhataApplication.Service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -51,8 +53,12 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void deleteAccountById(Long id) {
-        Account account = accountRepo.findById(id).orElseThrow(() -> new RuntimeException("No such user exist!"));
-        accountRepo.delete(account);
+        if (!accountRepo.existsById(id)) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "Account not found with id" + id
+            );
+        }
+        accountRepo.deleteById(id);
     }
 
 
