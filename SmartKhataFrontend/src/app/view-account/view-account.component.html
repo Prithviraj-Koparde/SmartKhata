@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h5 class="mb-0">Account Details</h5>
+                </div>
+
+                <div class="card-body">
+
+                    <p><strong>ID:</strong> {{ account.id }}</p>
+                    <p><strong>Name:</strong> {{ account.accountHolderName }}</p>
+                    <p><strong>Phone Number:</strong> {{ account.phoneNumber }}</p>
+                    <p><strong>Debt Date:</strong> {{ account.debtDate }}</p>
+                    <p><strong>Due Date:</strong> {{ account.dueDate }}</p>
+                    <p><strong>Amount (₹):</strong> {{ account.debt }}</p>
+
+                    <div class="text-center mt-4">
+                        <button class="btn btn-secondary" (click)="goBack()">
+                            Back to Accounts
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
