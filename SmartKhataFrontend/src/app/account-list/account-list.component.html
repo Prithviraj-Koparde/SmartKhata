@@ -11,9 +11,10 @@
                             <th>ID</th>
                             <th>Account Holder Name</th>
                             <th>Phone Number</th>
-                            <th>Debt Date</th>
-                            <th>Due Date</th>
+                            <!-- <th>Debt Date</th>
+                            <th>Due Date</th> -->
                             <th>Debt (₹)</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -23,16 +24,22 @@
                             <td>{{ account.id }}</td>
                             <td>{{ account.accountHolderName }}</td>
                             <td>{{ account.phoneNumber }}</td>
-                            <td>{{ account.debtDate }}</td>
-                            <td>{{ account.dueDate }}</td>
+                            <!-- <td>{{ account.debtDate }}</td>
+                            <td>{{ account.dueDate }}</td> -->
                             <td class="fw-bold text-danger">
                                 {{ account.debt | number:'1.2-2' }}
                             </td>
+                            <td><span class="badge" [ngClass]="account.debt > 0 ? 'text-danger' : 'text-success'">
+                                    {{ status(account.debt) }}
+                                </span></td>
                             <td (click)="updateAmount(account.id)" class="btn"
                                 style="margin: 10px; background-color: rgb(49, 221, 244); color: white;">Update Amount
                             </td>
                             <td (click)="deleteAccount(account.id)" class="btn"
                                 style="margin: 10px; background-color: rgb(181, 1, 1); color: white;">Delete
+                            </td>
+                            <td (click)="viewAccount(account.id)" class="btn"
+                                style="margin: 10px; background-color: rgb(0, 140, 255); color: white;">view
                             </td>
                         </tr>
                     </tbody>

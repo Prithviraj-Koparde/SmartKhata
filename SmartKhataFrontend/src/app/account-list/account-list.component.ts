@@ -36,4 +36,21 @@ export class AccountListComponent {
       this.getAccounts();
     })
   }
+
+  viewAccount(id: number) {
+
+    this.router.navigate(['/viewAccount', id]);
+
+  }
+
+  status(debt: number):String {
+    return debt>0 ? 'UNPAID' : 'PAID';
+  }
+
+  // validDelete(debt:number): String{
+  //   if(debt>0){
+  //     return console.error('Amount is UNPAID!!');
+  //   }
+  //   return console.error('Deleted Successfully!');
+  // }
 }
