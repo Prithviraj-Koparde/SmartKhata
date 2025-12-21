@@ -35,7 +35,8 @@
                             <td (click)="updateAmount(account.id)" class="btn"
                                 style="margin: 10px; background-color: rgb(49, 221, 244); color: white;">Update Amount
                             </td>
-                            <td (click)="deleteAccount(account.id)" class="btn"
+                            <td (click)="deleteAccount(account.id)" class="btn" [class.disabled]="account.debt>0"
+                                [class.opacity-50]="account.debt>0" (click)="deleteAccount(account.id)"
                                 style="margin: 10px; background-color: rgb(181, 1, 1); color: white;">Delete
                             </td>
                             <td (click)="viewAccount(account.id)" class="btn"

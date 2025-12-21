@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class AccountListComponent {
 
   accounts: Account[] = [];
+  account: Account = new Account();
   constructor(private accountService: AccountService, private router: Router) { }
 
   ngOnInit() {
@@ -31,6 +32,9 @@ export class AccountListComponent {
   }
 
   deleteAccount(id: number) {
+    if (this.account.debt > 0) {
+      return;
+    }
     this.accountService.deleteAccount(id).subscribe(data => {
       console.log(data);
       this.getAccounts();
@@ -43,8 +47,8 @@ export class AccountListComponent {
 
   }
 
-  status(debt: number):String {
-    return debt>0 ? 'UNPAID' : 'PAID';
+  status(debt: number): String {
+    return debt > 0 ? 'UNPAID' : 'PAID';
   }
 
   // validDelete(debt:number): String{
