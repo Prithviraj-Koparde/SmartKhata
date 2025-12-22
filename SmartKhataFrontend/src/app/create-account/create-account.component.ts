@@ -36,4 +36,13 @@ export class CreateAccountComponent {
   goToAccountList() {
     this.router.navigate([`/accounts`])
   }
+
+  // to check if duedate is greater than debtdate
+  isDueDateIsValid(): boolean {
+    if (!this.account.dueDate || !this.account.debtDate) {
+      return false;
+    }
+
+    return new Date(this.account.dueDate) < new Date(this.account.debtDate);
+  }
 }
