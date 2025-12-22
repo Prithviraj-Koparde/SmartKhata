@@ -3,6 +3,7 @@ package com.KhataApplication.Controller;
 
 import com.KhataApplication.DataTransferObject.AccountDTO;
 import com.KhataApplication.Service.AccountService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +22,7 @@ public class AccountController {
     private AccountService accountService;
 
     @PostMapping
-    public ResponseEntity<AccountDTO> addAccount(@RequestBody AccountDTO accountDTO) {
+    public ResponseEntity<AccountDTO> addAccount(@Valid @RequestBody AccountDTO accountDTO) {
         return new ResponseEntity<>(accountService.createAccount(accountDTO), HttpStatus.CREATED);
     }
 
