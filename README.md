@@ -65,7 +65,7 @@ Frontend
 4. Backend acts as the final authority against invalid or tampered data
 
 📂 Project Structure
-<img width="307" height="461" alt="image" src="https://github.com/user-attachments/assets/bcdfb1a7-213d-497e-8181-9dfba0daec92" />
+<img width="200" height="350" alt="image" src="https://github.com/user-attachments/assets/bcdfb1a7-213d-497e-8181-9dfba0daec92" />
 
 📸 Screenshots
 /screenshots
