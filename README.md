@@ -38,10 +38,10 @@ Frontend
 6. Bootstrap
 
 Tools
-2. Git & GitHub
-3. Postman (API testing)
-4. IntelliJ IDEA(Backend)
-5. VS Code(Frontend)
+1. Git & GitHub
+2. Postman (API testing)
+3. IntelliJ IDEA(Backend)
+4. VS Code(Frontend)
 
 🧱 Architecture Overview
 Backend
