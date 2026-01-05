@@ -65,21 +65,7 @@ Frontend
 4. Backend acts as the final authority against invalid or tampered data
 
 📂 Project Structure
-SmartKhata
-│
-├── SmartKhataBackend
-│   ├── controller
-│   ├── service
-│   ├── repository
-│   ├── entity
-│   ├── dto
-│   └── mapper
-│
-└── SmartKhataFrontend
-    ├── components
-    ├── services
-    ├── models
-    └── routes
+<img width="307" height="461" alt="image" src="https://github.com/user-attachments/assets/bcdfb1a7-213d-497e-8181-9dfba0daec92" />
 
 📸 Screenshots
 /screenshots
