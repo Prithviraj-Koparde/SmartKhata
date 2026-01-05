@@ -73,11 +73,14 @@ Frontend
 1. account-list
 <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/43135fcc-bd23-4b12-8562-2b4964d49ea4" />
 
+
 2. create-account
 <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/7e58c94d-3eaa-4226-8958-8a014f783b49" />
 
+
 3. view-account
 <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/bec54cc1-a655-4c3c-92e4-c781eacbb804" />
+
 
 4. update-amount
 <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/31bb3508-d1f7-4ef4-b972-d411099f17df" />
