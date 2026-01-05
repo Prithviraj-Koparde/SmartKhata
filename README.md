@@ -35,9 +35,9 @@ Frontend
 3. Angular Forms
 4. Angular Router
 5. HttpClient
+6. Bootstrap
 
-Bootstrap
-1. Tools
+Tools
 2. Git & GitHub
 3. Postman (API testing)
 4. IntelliJ IDEA(Backend)
